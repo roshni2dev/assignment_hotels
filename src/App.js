@@ -1,24 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+
+import { Route, Routes } from 'react-router-dom';
+import Home from './routes/home/home.component';
+import HotelsCard from './components/hotels-card/hotels-card.component';
+import { useState } from 'react';
 
 function App() {
+  const [activeCategory, setActiveCategory] = useState('new york');
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+    <Route path='/'>
+        <Route index element={<Home setActiveCategory={setActiveCategory} activeCategory={activeCategory} />} />
+        <Route path='hotel/:id' element={<HotelsCard activeCategory={activeCategory} />} />
+    </Route>
+</Routes>
   );
 }
 
