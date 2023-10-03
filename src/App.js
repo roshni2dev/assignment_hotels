@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import Home from './routes/home/home.component';
 import HotelsCard from './components/hotels-card/hotels-card.component';
 import { useState } from 'react';
+import Hotels from './routes/home/hotels/hotels.component';
 
 function App() {
   const [activeCategory, setActiveCategory] = useState('new york');
@@ -10,7 +11,7 @@ function App() {
     <Routes>
     <Route path='/'>
         <Route index element={<Home setActiveCategory={setActiveCategory} activeCategory={activeCategory} />} />
-        <Route path='hotel/:id' element={<HotelsCard activeCategory={activeCategory} />} />
+        <Route path='hotel/:id' element={<Hotels activeCategory={activeCategory} />} />
     </Route>
 </Routes>
   );
