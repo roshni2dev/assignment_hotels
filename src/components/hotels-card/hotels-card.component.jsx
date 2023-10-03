@@ -30,7 +30,7 @@ const HotelsCard = ({ activeCategory }) => {
                                     activeCategory === item.category
                                         ?
                                         <Grid item xs={4} style={{ display: 'flex', justifyContent: 'center' }}>
-                                            <Card className='card' onClick={() => navigate('/hotel')}>
+                                            <Card className='card' onClick={() => navigate(`/hotel/${item.id}`)}>
                                                 <CardActionArea>
                                                     <CardMedia
                                                         component="img"
