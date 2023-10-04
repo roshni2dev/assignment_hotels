@@ -1,4 +1,4 @@
-import { Box, Button, Grid } from "@mui/material";
+import { Button, Grid } from "@mui/material";
 
 import './category.styles.scss';
 import { useState } from "react";

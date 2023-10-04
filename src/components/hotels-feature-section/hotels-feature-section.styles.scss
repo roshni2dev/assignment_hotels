@@ -1,0 +1,19 @@
+.feature-section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+
+    & .feature-section-item {
+        border-right: 1px solid #f0f1f2;
+        padding: 0 10px;
+
+        &:nth-last-child(1) {
+            border: none;
+        }
+
+        & .feature-section-heading {
+            color: '#282828';
+            margin-top: 5px;
+        }
+    }
+}

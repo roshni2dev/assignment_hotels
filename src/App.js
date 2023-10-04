@@ -1,7 +1,6 @@
 
 import { Route, Routes } from 'react-router-dom';
 import Home from './routes/home/home.component';
-import HotelsCard from './components/hotels-card/hotels-card.component';
 import { useState } from 'react';
 import Hotels from './routes/home/hotels/hotels.component';
 

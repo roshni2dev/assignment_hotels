@@ -1,12 +1,12 @@
 
 import { useCallback, useState } from "react";
-import { Bathtub, BedRounded, BusinessRounded, FavoriteBorder, LocationOn, LocationOnOutlined } from "@mui/icons-material"
+import {FavoriteBorder, LocationOnOutlined } from "@mui/icons-material"
 import { Box, Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Grid, Typography } from "@mui/material"
+import { useNavigate } from "react-router-dom";
 
 import { HOTELS_DATA, All_HOTELS_DATA } from '../../data/hotels.data'
-import sqtIcon from '../../assets/arrow.png';
+import HotelsFeatureSection from "../hotels-feature-section/hotels-feature-section.component";
 import './hotels-card.styles.scss';
-import { useNavigate } from "react-router-dom";
 
 
 const HotelsCard = ({ activeCategory }) => {
@@ -14,7 +14,7 @@ const HotelsCard = ({ activeCategory }) => {
     const navigate = useNavigate();
 
     const toggle = useCallback(() => {
-        setMoreItemsVisible(v => !v);
+        setMoreItemsVisible(prev => !prev);
     }, []);
 
     return (
@@ -55,24 +55,7 @@ const HotelsCard = ({ activeCategory }) => {
                                                         <Typography className="card-heading" gutterBottom variant="h6" component="div">
                                                             {item.location1}
                                                         </Typography>
-                                                        <Box className='feature-section'>
-                                                            <Box className='feature-section-item'>
-                                                                <BusinessRounded />
-                                                                <Typography className="feature-section-heading" variant="subtitle2">3 Room</Typography>
-                                                            </Box>
-                                                            <Box className='feature-section-item'>
-                                                                <BedRounded />
-                                                                <Typography className="feature-section-heading" variant="subtitle2">4 Bed</Typography>
-                                                            </Box>
-                                                            <Box className='feature-section-item'>
-                                                                <Bathtub />
-                                                                <Typography className="feature-section-heading" variant="subtitle2">1 Bath</Typography>
-                                                            </Box>
-                                                            <Box className='feature-section-item'>
-                                                                <img src={sqtIcon} style={{ width: '25px' }} />
-                                                                <Typography className="feature-section-heading" variant="subtitle2">732 sqt.</Typography>
-                                                            </Box>
-                                                        </Box>
+                                                       <HotelsFeatureSection />
                                                     </CardContent>
                                                 </CardActionArea>
                                                 <CardActions style={{ display: 'flex', padding: '16px', justifyContent: 'space-between' }}>
@@ -122,24 +105,7 @@ const HotelsCard = ({ activeCategory }) => {
                                                         <Typography className="card-heading" gutterBottom variant="h6" component="div">
                                                             {item.location1}
                                                         </Typography>
-                                                        <Box className='feature-section'>
-                                                            <Box className='feature-section-item'>
-                                                                <BusinessRounded />
-                                                                <Typography className="feature-section-heading" variant="subtitle2">3 Room</Typography>
-                                                            </Box>
-                                                            <Box className='feature-section-item'>
-                                                                <BedRounded />
-                                                                <Typography className="feature-section-heading" variant="subtitle2">4 Bed</Typography>
-                                                            </Box>
-                                                            <Box className='feature-section-item'>
-                                                                <Bathtub />
-                                                                <Typography className="feature-section-heading" variant="subtitle2">1 Bath</Typography>
-                                                            </Box>
-                                                            <Box className='feature-section-item'>
-                                                                <img src={sqtIcon} style={{ width: '25px' }} />
-                                                                <Typography className="feature-section-heading" variant="subtitle2">732 sqt.</Typography>
-                                                            </Box>
-                                                        </Box>
+                                                       <HotelsFeatureSection />
                                                     </CardContent>
                                                 </CardActionArea>
                                                 <CardActions style={{ display: 'flex', padding: '16px', justifyContent: 'space-between' }}>
